@@ -55,7 +55,7 @@ function App() {
       try {
         const res = await axios.get("/api/pin/");
         console.log(res.data);
-        setPins(res.data);
+        setPins([...pins, ...res.data]);
       } catch (err) {
         console.log(err);
       }
