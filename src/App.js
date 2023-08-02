@@ -32,7 +32,7 @@ function App() {
       lng: newPlace.lng,
     };
     try {
-      const res = await axios.post("/api/pin/", newPin);
+      const res = await axios.post("https://travel-map-app-backend.vercel.app/api/pin/", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
@@ -53,7 +53,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("/api/pin/");
+        const res = await axios.get("https://travel-map-app-backend.vercel.app/api/pin/");
         console.log(res.data);
         setPins([...pins, ...res.data]);
       } catch (err) {

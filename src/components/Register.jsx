@@ -18,7 +18,7 @@ export default function Register({ setShowRegister }) {
     };
 
     try {
-      await axios.post("/api/user/register", newUser);
+      await axios.post("https://travel-map-app-backend.vercel.app/api/user/register", newUser);
       setError(false);
       setSuccess(true);
     } catch (err) {
